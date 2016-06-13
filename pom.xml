@@ -23,9 +23,44 @@
             <artifactId>spring-boot-devtools</artifactId>
             <optional>true</optional>
         </dependency>
+        
+        <dependency>
+        	<groupId>org.springframework.boot</groupId>
+      		<artifactId>spring-boot-starter-web</artifactId>
+    	</dependency>
+    	<dependency>
+      		<groupId>org.springframework.boot</groupId>
+      		<artifactId>spring-boot-starter-data-jpa</artifactId>
+    	</dependency>
+    	<dependency>
+      		<groupId>mysql</groupId>
+      		<artifactId>mysql-connector-java</artifactId>
+    	</dependency>
+        
+        <dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>jquery</artifactId>
+		    <version>3.0.0</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>bootstrap</artifactId>
+		    <version>3.3.6</version>
+		</dependency>
+		
+		
+		<!-- Jade -->
+		<dependency>  
+		    <groupId>com.tilab.jade</groupId> 
+		    <artifactId>jade</artifactId> 
+		    <version>4.4.0</version>  
+		</dependency>
+        
     </dependencies>
 
     <properties>
+    	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
     </properties>
 
@@ -35,6 +70,11 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+		          <jvmArguments>
+		            -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005
+		          </jvmArguments>
+		        </configuration>
             </plugin>
         </plugins>
     </build>
